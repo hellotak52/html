@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html><head><script type="text/javascript">
+	var sessCorpCd = "demo";
+	var sessLocale = "ko";
+	var sessEmpNo = "10000001";
+	var sessMstu = "M";
+	var sessAuth = "1 ";
+	var sessName = "홍길동";
+	var sessStepName = "대표이사";
+	var sessDeptCode = "60000001";
+	var sessDeptName = "부서";
+	var sessTelNo = "010-1111-2222";
+	var sessPlacWork = "1";
+</script>
+
+<title>포스코플로우</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/main/main.js"></script>
+<script type="text/javascript" src="../resources/js/common_dynamic.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../resources/js/respond.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.placeholder.enhanced-1.5.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../resources/js/common.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.poshytip.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.i18n.properties-1.0.9.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.numeric.min.js"></script>
+<script type="text/javascript" src="../resources/js/jsonUtil.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bpopup.min.js"></script>
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/ie.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery-ui-1.8.18.custom.css">
+</head>
+
+<body>
+	<!-- viewport시작 -->
+	<div id="viewport" class="sub">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="contains pc">
+				<h1 class="logo">
+					<a href="../main/main.do"><img src="../resources/images/icon/header_home.png" alt="PoscoFlow"><img src="../resources/images/common/header_logo_w.png"></a>
+				</h1>
+				<div class="header_title">총무지원센터</div>
+				<div class="header_menu">
+					<a href="#" class="btn_menu btn_comment"><span class="badge">0</span></a>
+					<a href="javascript:goSystem();" class="btn_menu btn_setup"></a>
+					<a href="#" class="btn_menu btn_mypage"></a>
+					<div class="select_box">
+						<input type="hidden" id="lo" name="lo" value="ko">
+						<a href="#" class="btn_value">업무인프라섹션<b>홍길동</b>과장 </a>
+						<span class="icon"></span>
+						<div class="select_list">
+							<a href="javascript:logOut();">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 헤더 끝 -->
+		<!-- 콘텐츠시작 -->
+		<div id="content">
+			<div class="main_content">
+				<div class="main_top bg_cover">
+					<div class="contains">
+						<!-- 메인텍스트 -->
+						<div class="main_text">
+							<div class="mb40 over_h">
+								<div class="logo "><img src="../resources/images/main/top_logo.png" alt="PoscoFlow"></div>
+								<div class="title ">총무지원센터</div>
+							</div>
+							<p class="text">사무용품, 소모품 및 각종 문서 결재 그리고 지원, 관리 까지 <br>업무 환경을 좀 더 편하고 빠르게 지원하는 <br>포스코플로우 총무 지원센터 입니다.</p>
+							<div class="main_btn_box">
+								<div class="main_btn">용도품</div>
+								<div class="main_btn">복지</div>
+								<div class="main_btn">지원</div>
+								<div class="main_btn">관리</div>
+							</div>		 
+						</div>
+						<!-- 슬라이드 -->
+						<div class="main_slide">
+							<input type="radio" name="slide" id="slide01" checked>
+							<input type="radio" name="slide" id="slide02">
+							<input type="radio" name="slide" id="slide03">
+							<input type="radio" name="slide" id="slide04">
+							<ul class="slide_wrap">
+								<li class="slide_box">
+									<div class="text_box">용도품</div>
+									<div class="slide_list">
+										<a href="#" class="btn_box no1">
+											<span class="text">사무용품</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no2">
+											<span class="text">IT 소모품</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no3">
+											<span class="text">근무복 및 안전용품</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no4">
+											<span class="text">명함</span>
+											<span class="icon"></span>
+										</a>
+									</div>
+								</li>
+								<li class="slide_box">
+									<div class="text_box">복지</div>
+									<div class="slide_list">
+										<a href="#" class="btn_box no1">
+											<span class="text">통합신청</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no2">
+											<span class="text">경조사</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no3">
+											<span class="text">복지카드</span>
+											<span class="icon"></span>
+										</a>
+									</div>
+								</li>
+								<li class="slide_box">
+									<div class="text_box">지원</div>
+									<div class="slide_list">
+										<a href="#" class="btn_box no1">
+											<span class="text">기념품</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no2">
+											<span class="text">문서수발</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no3">
+											<span class="text">법인카드</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no4">
+											<span class="text">사원증</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no5">
+											<span class="text">임시출입증</span>
+											<span class="icon"></span>
+										</a>
+									</div>
+								</li>
+								<li class="slide_box">
+									<div class="text_box">관리</div>
+									<div class="slide_list">
+										<a href="#" class="btn_box no1">
+											<span class="text">자산관리</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no2">
+											<span class="text">계약관리</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no3">
+											<span class="text">좌동</span>
+											<span class="icon"></span>
+										</a>
+										<a href="#" class="btn_box no4">
+											<span class="text">공지사항</span>
+											<span class="icon"></span>
+										</a>
+									</div>
+								</li>
+							</ul>
+							<div class="slide_control">
+								<div class="control01">
+									<label for="slide04" class="prev"></label>
+									<label for="slide02" class="next"></label>
+								</div>
+								<div class="control02">
+									<label for="slide01" class="prev"></label>
+									<label for="slide03" class="next"></label>
+								</div>
+								<div class="control03">
+									<label for="slide02" class="prev"></label>
+									<label for="slide04" class="next"></label>
+								</div>
+								<div class="control04">
+									<label for="slide03" class="prev"></label>
+									<label for="slide01" class="next"></label>
+								</div>
+							</div>
+						</div>
+						<!-- 슬라이드 끝 -->
+					</div>					
+				</div>
+				<!-- 하단 -->
+					<!-- container -->
+					<div class="container">
+						<!-- mainbox -->
+						<div class="main_box">
+							<div class="big_box">
+								<h3>나의 신청현황 <div class="more">MORE +</div></h3>
+								<div class="info_box_wrap">
+									<div class="info_box">
+										<p><span class="label approval">승인</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>
+									<div class="info_box">
+										<p><span class="label save">저장</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>
+									<div class="info_box">
+										<p><span class="label return">반려</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>
+									<div class="info_box">
+										<p><span class="label cancel">신청취소</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>
+									<div class="info_box">
+										<p><span class="label wait">결재중</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>
+									<div class="info_box">
+										<p><span class="label approval">승인</span></p>
+										<p>매직펜,유성,(적) 외 4건</p>
+										<p>사무용품</p>
+									</div>				
+								</div>
+							</div>
+
+							<div class="small_box">
+								<h3>결재함<div class="case"><span class="fs14em">14</span>건</div></h3>
+								<ul>
+									<li>
+										<span class="label color1">1</span><span class="title">사무용품</span>
+										<span class="name">홍길동</span><span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color1">2</span><span class="title">사무용품</span>
+										<span class="name">홍길동</span><span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color1">3</span><span class="title">사무용품</span>
+										<span class="name">홍길동</span><span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color1">4</span><span class="title">사무용품</span>
+										<span class="name">홍길동</span><span class="date">2018-09-16</span>
+									</li>
+								</ul>
+							</div>
+							<div class="small_box">
+								<h3>공지사항<div class="more">MORE +</div></h3>
+								<ul>
+									<li>
+										<span class="label color2">1</span><span class="title">5/30 공지사항입니다</span>
+										<span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color2">2</span><span class="title">5/30 공지사항입니다</span>
+										<span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color2">3</span><span class="title">5/30 공지사항입니다</span>
+										<span class="date">2018-09-16</span>
+									</li>
+									<li>
+										<span class="label color2">4</span><span class="title">5/30 공지사항입니다</span>
+										<span class="date">2018-09-16</span>
+									</li>
+								</ul>
+							</div>
+							<div class="small_box">
+								<h3>계약현황<div class="more">MORE +</div></h3>
+								<ul>
+									<li>
+										<span class="label color3">1</span><span class="title">포스코 임대차 계약</span>
+										<span class="date">D-14</span>
+									</li>
+									<li>
+										<span class="label color3">2</span><span class="title">포스코 임대차 계약</span>
+										<span class="date">D-14</span>
+									</li>
+									<li>
+										<span class="label color3">3</span><span class="title">포스코 임대차 계약</span>
+										<span class="date">D-14</span>
+									</li>
+									<li>
+										<span class="label color3">4</span><span class="title">포스코 임대차 계약</span>
+										<span class="date">D-14</span>
+									</li>
+								</ul>
+							</div>
+							<div class="small_box">
+							<h3>담당자 안내</h3>
+							<p class="mt10">각 담당자의 유선 전화번호 및 이메일을 확인하세요.</p>
+							<div class="admin_call fl_l">
+								<p>시스템관리자</p>
+								<p>02-000-0000</p>
+								<p>asdf@naver.com</p>
+							</div>
+							<div class="admin_btn fl_r">바로가기</div>
+						</div>
+
+						</div>
+
+
+						<!-- mainbox end -->
+					</div>
+					<!-- container end-->
+			</div>
+		</div>
+		<!-- 콘텐츠 끝 -->
+		<!-- 푸터시작 -->
+		<div id="footer">
+			<div class="contains">
+				<p class="copyright">COPYRIGHT ⓒ 2023 POSCO FLOW. All Rights Reserved.  | <span class="help">도움말</span> </p>
+			</div>
+		</div>
+		<!-- 푸터 끝 -->
+	</div>
+	<!-- viewport끝-->
+</body>

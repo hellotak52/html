@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi" />
+	<title>포스코플로우</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+		* {margin:0; padding:0;}
+		body {background-color:#fff; font-family:"맑은 고딕", san-serif; padding:20px;}
+		caption {display:none; font-size:0; line-height:0; height:0; width:0;}
+		h1 {font-size:24px; margin-bottom:10px;}
+		.note {overflow:hidden; background-color:#eee; border:2px dashed #666; margin-bottom:20px; padding:10px;}
+		.note ul {overflow:hidden; padding-left:15px;}
+		.note ul li {list-style:bullet; font-size:12px; line-height:1.5em;}
+
+		.status {overflow:hidden; margin-bottom:10px;}
+		.status {overflow:hidden;}
+		.status li {float:left; list-style:none; margin-left:5px;}
+		.status li:first-child {margin-left:0;}
+		.status li a {display:block; font-size:11px; text-decoration:none; padding-right:5px; padding-left:5px; height:18px;}
+		.status li a:hover {background-color:#dfb8b6; color:#fff;}
+
+		.btn-box {margin:20px 0;}
+		.btn-box a {padding:3px 5px;border:1px solid #ddd;text-decoration:none;color:#333;font-size:13px;}
+		.btn-box a:focus ,
+		.btn-box a:hover {background:#dfd;}
+
+		section {overflow:hidden;}
+		table {width:100%; border-collapse:collapse; table-layout:fixed;}
+		th, td {word-break:break-all;}
+		tbody .end td {background-color:#ddd;}
+		tbody .del td {background-color:#999;text-decoration:line-through;}
+		tbody .ing td {background-color:#ffd;}
+		tbody .caution td{background-color:#efdbcd;}
+		tbody .modify td {background-color:#e8e9f6;}
+		thead th {background-color:#dcdcdc; color:#333; border:1px solid #666; font-size:12px; padding-top:5px; padding-bottom:5px;}
+		tbody td {border:1px solid #666; font-size:12px; padding:3px 6px;}
+		tbody td.start {color:#ff6028; font-weight:bold;}
+		tbody td.kd{text-align: center;}
+		tbody td.name {color:#555;}
+		tbody td.end {color:#0f8ce4; font-weight:bold;}
+		tbody td.status {color:#0f8ce4; font-weight:bold;}
+		tbody td.qna p {color:#999}
+		tbody .modify td.qna p:last-child {color:#666; font-weight:bold;}
+		tbody .center {text-align:center; padding-left:0;}
+		tbody .depth01 {font-weight:bold; }
+		tbody .due{color:#a0a0a0; text-align:left; padding-left:10px}
+		tbody .due p{border-top:2px solid #a0a0a0; padding:5px;}
+		tbody .due p:first-child{border-top:0}
+		tbody a {text-decoration:none;}
+		tbody a:hover {text-decoration:underline;}
+		td.link{cursor:pointer;}
+		td.link:hover { font-weight:700}
+		td.guide_link{cursor:pointer;}
+		td.common_link{cursor:pointer;}
+		/* MOBILE */
+		@media screen and (max-width:768px){
+			body {padding:10px;}
+			h1 {font-size:16px;}
+			.note {display:none; overflow:hidden; line-height:0; height:0; width:0;}
+			table tbody tr td {font-size:13px;}
+		}
+
+		/* MENU:HOVER_COLOR */
+		table tbody tr.menu01:hover td {background-color:#A7EEFF;}
+		table tbody tr.menu02:hover td {background-color:#7fb2f0;}	
+		table tbody tr.menu03:hover td {background-color:#D2FFD2;}
+		table tbody tr.menu04:hover td {background-color:#FFD4DF;}
+		table tbody tr.menu05:hover td {background-color:#FFDCFF;}
+		table tbody tr.menu06:hover td {background-color:#FAFA96;}
+		table tbody tr.menu07:hover td {background-color:#FFC846;}
+		table tbody tr.menu08:hover td {background-color:#FFE4B5;}
+		table tbody tr.menu09:hover td {background-color:#A5E3E6;}
+		table tbody tr.menu10:hover td {background-color:#d4e4f5;}
+		table tbody tr.menu11:hover td {background-color:#41ffb7;}
+		table tbody tr.menu12:hover td {background-color:#f288af;}
+
+		/*table tbody tr.menu07 td {background-color:#e8e9f6;}*/
+
+		.incomplete{background:#ffbfbf}
+
+	</style>
+
+	<script>
+		$(document).ready(function(){
+			$('.link').on('click', function(){
+				var hostname = window.location.hostname;
+				var url = "";
+				
+				url = "";
+
+				var tg = $(this).text() + '.html';
+				if(tg == ''){
+				}else{
+					window.open(url + tg+'','_blank')
+				}
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<section>
+		<table>
+			<colgroup>
+				<col width="10%" />
+				<col width="5%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="*" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">구분</th>
+					<th scope="col">1DEPTH</th>
+					<th scope="col">2DEPTH</th>
+					<th scope="col">3DEPTH</th>
+					<th scope="col">LINK</th>
+					<th scope="col">비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="menu01">
+					<td class="depth01">메인 및 개인메뉴</td>
+					<td>메인(대쉬보드)</td>
+					<td></td>
+					<td></td>
+					<td class="link">_main/main</td>
+					<td></td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01"></td>
+					<td>내정보</td>
+					<td></td>
+					<td></td>
+					<td class="link">_main/myInfo_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01"></td>
+					<td>결재함</td>
+					<td>조회</td>
+					<td></td>
+					<td class="link">_main/</td>
+					<td>퍼블 작업 안해도 된다고 전달받음</td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01"></td>
+					<td></td>
+					<td>대결자 관리</td>
+					<td></td>
+					<td class="link">_main/</td>
+					<td>퍼블 작업 안해도 된다고 전달받음</td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01"></td>
+					<td>담당자 안내</td>
+					<td></td>
+					<td></td>
+					<td class="link">_main/</td>
+					<td>퍼블 작업 안해도 된다고 전달받음</td>
+				</tr>
+				<tr class="menu01">
+					<td class="depth01" colspan="6" style="background:#999"></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01">일반메뉴</td>
+					<td>지원</td>
+					<td>사무용품</td>
+					<td>사무용품 신청</td>
+					<td class="link">_support/officeSupplies_01</td>
+					<td>장바구니기능</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>사무용품 신청 관리</td>
+					<td class="link">_support/officeSupplies_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>사무용품 관리</td>
+					<td class="link">_support/officeSupplies_03</td>
+					<td>양옆 2테이블</td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>IT소모품</td>
+					<td>IT소모품 신청</td>
+					<td class="link">_support/itConsumable_01</td>
+					<td>이미지</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>IT소모품 신청 관리</td>
+					<td class="link">_support/itConsumable_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>IT소모품 관리</td>
+					<td class="link">_support/itConsumable_03</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02 incomplete">
+					<td class="depth01"></td>
+					<td></td>
+					<td>명함</td>
+					<td>명함 신청</td>
+					<td class="link">_support/businessCard_01/미완성</td>
+					<td>디지털 카드부분 문제로 홀딩 미완성</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>명함 신청 관리</td>
+					<td class="link">_support/businessCard_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>기념품</td>
+					<td>기념품 신청</td>
+					<td class="link">_support/souvenir_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>기념품 신청 관리</td>
+					<td class="link">_support/souvenir_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>기념품 관리</td>
+					<td class="link">_support/souvenir_03</td>
+					<td>양옆 2테이블, ★수량변경팝업: 수량변경 버튼 클릭시</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>기념품 구입실적</td>
+					<td class="link">_support/souvenir_04</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02" style="border-top: 3px solid #05507d;">
+					<td class="depth01"></td>
+					<td>복지</td>
+					<td>통합신청</td>
+					<td>통합신청 신청</td>
+					<td class="link">_welfare/totalApplication_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>통합신청 신청 관리</td>
+					<td class="link">_welfare/totalApplication_02</td>
+					<td>★당첨 미당첨 라벨</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>통합신청 관리</td>
+					<td class="link">_welfare/totalApplication_03</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>근무복 및 안전용품</td>
+					<td>근무복 및 안전용품 신청</td>
+					<td class="link">_welfare/workClothes_01</td>
+					<td>장바구니 기능</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>근무복 및 안전용품 신청 관리</td>
+					<td class="link">_welfare/workClothes_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>근무복 및 안전용품 관리</td>
+					<td class="link">_welfare/workClothes_03</td>
+					<td>테이블 5개 : 고정사이즈로 들어감</td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>경조사</td>
+					<td>경조사 신청</td>
+					<td class="link">_welfare/familyEvent_01</td>
+					<td> ★사용자찾기 팝업 : 변경버튼 클릭시, ★ 다중파일 업로드팝업: 파일첨부 클릭시 ,(파일첨부버튼, 양식내려받기버튼에 아이콘들어감)</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>경조사 신청 관리</td>
+					<td class="link">_welfare/familyEvent_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>경조사 관리</td>
+					<td class="link">_welfare/familyEvent_03</td>
+					<td>양옆 2테이블</td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>문서수발</td>
+					<td>문서수발 신청</td>
+					<td class="link">_welfare/document_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>문서수발 신청 관리</td>
+					<td class="link">_welfare/document_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>문서수발 관리</td>
+					<td class="link">_welfare/document_03</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02" style="border-top: 3px solid #05507d;">
+					<td class="depth01"></td>
+					<td>일반</td>
+					<td>법인카드</td>
+					<td>법인카드 신청</td>
+					<td class="link">_general/corporateCard_01</td>
+					<td>파일첨부버튼에 아이콘들어감</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>법인카드 신청 관리</td>
+					<td class="link">_general/corporateCard_02</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>법인카드 관리</td>
+					<td class="link">_general/corporateCard_03</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>복지카드</td>
+					<td>복지카드 신청</td>
+					<td class="link">_general/welfareCard_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>복지카드 신청 관리</td>
+					<td class="link">_general/welfareCard_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>사원증</td>
+					<td>사원증 신청</td>
+					<td class="link">_general/employeeCard_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>사원증 신청 관리</td>
+					<td class="link">_general/employeeCard_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>임시출입증</td>
+					<td>임시출입증 신청</td>
+					<td class="link">_general/temporaryPass_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>임시출입증 신청 관리</td>
+					<td class="link">_general/temporaryPass_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02" style="border-top: 3px solid #05507d;">
+					<td class="depth01"></td>
+					<td>관리</td>
+					<td>계약관리</td>
+					<td>계약관리 계약관리</td>
+					<td class="link">_management/contractManagement_01</td>
+					<td>업로드버튼</td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>자산관리</td>
+					<td>자산관리</td>
+					<td class="link">_management/assetManagement_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>자산분류관리</td>
+					<td class="link">_management/assetManagement_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>차량관리</td>
+					<td>차량운행</td>
+					<td class="link">_management/vehicleManagement_01</td>
+					<td>운행리포트 코딩</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>차량관리</td>
+					<td class="link">_management/vehicleManagement_02</td>
+					<td></td>
+				</tr>
+				<!--카테고리 -->
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td>공지사항</td>
+					<td>공지사항</td>
+					<td class="link">_management/notice_01</td>
+					<td>한줄짜리 게시판</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td class="link">_management/notice_02</td>
+					<td>파일첨부버튼에 아이콘</td>
+				</tr>
+				<tr class="menu02">
+					<td class="depth01" colspan="6" style="background:#999"></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01">시스템 메뉴</td>
+					<td>시스템</td>
+					<td>시스템</td>
+					<td>사용자 조회</td>
+					<td class="link">_system/userInquiry_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>부서 조회</td>
+					<td class="link">_system/departmentInquiry_01</td>
+					<td>트리구조</td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>메뉴 관리</td>
+					<td class="link">_system/menuManagement_01</td>
+					<td>트리구조</td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>담당자 관리</td>
+					<td class="link">_system/contactManagement_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>코드 관리</td>
+					<td class="link">_system/codeManagement_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>결재선 관리</td>
+					<td class="link">_system/approvalLines_01</td>
+					<td></td>
+				</tr>
+				<tr class="menu03">
+					<td class="depth01"></td>
+					<td></td>
+					<td></td>
+					<td>전체 대결자 관리</td>
+					<td class="link">_system/approvalAll_01</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</body>
+</html>

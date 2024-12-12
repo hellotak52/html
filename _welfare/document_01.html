@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html><head><script type="text/javascript">
+	var sessCorpCd = "demo";
+	var sessLocale = "ko";
+	var sessEmpNo = "10000001";
+	var sessMstu = "M";
+	var sessAuth = "1 ";
+	var sessName = "홍길동";
+	var sessStepName = "대표이사";
+	var sessDeptCode = "60000001";
+	var sessDeptName = "부서";
+	var sessTelNo = "010-1111-2222";
+	var sessPlacWork = "1";
+</script>
+
+<title>문서수발</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/main/main.js"></script>
+<script type="text/javascript" src="../resources/js/common_dynamic.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../resources/js/respond.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.placeholder.enhanced-1.5.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../resources/js/common.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.poshytip.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.i18n.properties-1.0.9.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.numeric.min.js"></script>
+<script type="text/javascript" src="../resources/js/jsonUtil.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bpopup.min.js"></script>
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/ie.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery-ui-1.8.18.custom.css">
+</head>
+
+<body>
+	<!-- 헤더 -->
+	<div id="viewport" class="sub">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="contains pc">
+				<h1 class="logo">
+					<a href="../main/main.do"><img src="../resources/images/common/header_logo_w.png"></a>
+				</h1>
+				<div class="header_title">총무지원센터</div>
+				<div class="header_menu">
+					<a href="#" class="btn_menu btn_comment"><span class="badge">0</span></a>
+					<a href="javascript:goSystem();" class="btn_menu btn_setup"></a>
+					<a href="#" class="btn_menu btn_mypage"></a>
+					<div class="select_box">
+						<input type="hidden" id="lo" name="lo" value="ko">
+						<a href="#" class="btn_value">업무인프라섹션<b>홍길동</b>과장 </a>
+						<span class="icon"></span>
+						<div class="select_list">
+							<a href="javascript:logOut();">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 컨텐츠 -->
+		<div id="content">
+			<!-- 사이드 메뉴 -->
+			<div id="sidebar">
+				<div class="sidebar_top pc">
+					<a href="javascript:;" title="메뉴 닫기" class="btn_sidebar"></a>
+					<a href="javascript:;" class="btn_menuall"><span>전체 메뉴 보기</span></a>
+				</div>
+				<div class="sidebar_wrap">
+					<div class="sidebar_area mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+						<ul id="gnb" class="pb100">
+							<li class="menu active">
+								<a href="#" class="btns link btn_M05 bookmark">
+									<span class="icon"></span>
+									<span class="text">즐겨찾기</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu bookmark" style="display: block;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns">IT소모품</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">기념품</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">통합신청</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">경조사</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">복지시설</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">자산관리</a></li>
+								</ul>
+							</li>
+							<li class="menu active">
+								<a href="#" class="btns link btn_M01">
+									<span class="icon"></span>
+									<span class="text">지원</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: block;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">사무용품</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">IT소모품</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">명함</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">기념품</a><span class="my_icon active"></span></li>
+								</ul>								
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M02">
+									<span class="icon"></span>
+									<span class="text">복지</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">통합신청</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">근무복 및 안전용품</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">경조사</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">문서수발</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M03">
+									<span class="icon"></span>
+									<span class="text">관리</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">법인카드</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">복지시설</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">사원증</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">임시출입증</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M04">
+									<span class="icon"></span>
+									<span class="text">일반</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">계약관리</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">자산관리</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">차량관리</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">공지사항관리</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>		
+
+						</ul>
+					</div></div></div>
+				</div>
+				<div class="sidebar_bottom pc">
+					<div class="info active">
+						<span class="my_icon">담당자 안내</span>
+					</div>
+					<p>POSCO FLOW   <span class="fs08em">Value, Connected</span></p>
+				</div>				
+			</div>
+		</div>
+		<div id="sidebar_mask"></div>
+		<!-- 서브 컨텐츠 -->
+		<div class="sub_content">
+			<div class="pc">
+				<div class="sub_header welfare">
+					<p class="title">문서수발</p>
+				</div>
+				<div id="lnb_menu" class="lnb_menu_box">
+					<div class="sub_lnb_menu menu_scroll">
+						<div class="lnb_menu">
+							<a href="javascript:pageLocationHref('#');" class="btn_menu active">신청</a>
+							<a href="javascript:pageLocationHref('#');" class="btn_menu ">신청 관리</a>
+							<a href="javascript:pageLocationHref('#');" class="btn_menu ">관리</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 승인 -->
+			<div class="list_table_in_wrap">
+				<table class="list_table_in fl_l">
+					<colgroup>
+						<col style="width:100px;">
+						<col style="width:240px;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>신청일시</th>
+							<td>2023.03.06</td>
+						</tr>
+						<tr>
+							<th>진행상태</th>
+							<td>반려</td>
+						</tr>
+						<tr>
+							<th>반려사유</th>
+							<td>반려 승인 테스트 01234567890</td>
+						</tr>
+					</tbody>				
+				</table>
+				<table class="list_table_in fl_r">
+					<colgroup>
+						<col style="width:200px;">
+						<col style="width:200px;">
+						<col style="width:200px;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>1차 결재자<div class="btn_n_s1" onclick="fn_popUp('1');">변경</div></th>
+							<th>2차 결재자</th>
+							<th>참조자</th>
+						</tr>
+						<tr style="height: 69;">
+							<td>
+								<p>개발1팀 홍길동 과장</p>
+								<p>2023-03-15 14:22</p>
+							</td>
+							<td>
+								<p><span class="mr5">총무1팀 김철수 과장</span><span class="f_web">(대결)</span></p>
+								<p><span class="mr5">반려</span><span>(2023-03-15 14:22)</span></p>
+							</td>
+							<td>
+								<p>개발1팀 박영희 과장</p>
+							</td>
+						</tr>
+					</tbody>				
+				</table>
+			</div>
+			<div class="sub_btn_menu_n fl_r mt30">
+				<a href="" class="btn_line btn_color01">저장</a>
+				<a href="" class="btn_line btn_color01">신청</a>
+			</div>
+			<div class="wrap_apply_bg mt80">
+				<!-- 서브타이틀-->				
+				<div class="subtitle_wrap "> 
+					<span class="subtitle fl_l">기본정보</span>
+				</div>
+				<!-- 테이블 -->
+				<table class="list_table1 left_td mt6">
+					<colgroup>
+						<col style="width:10%">
+						<col style="width:40%">
+						<col style="width:10%">
+						<col style="width:40%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>부서</th>
+							<td>구매시스템팀</td>
+							<th>사번</th>
+							<td>p123123</td>	
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td>홍지유</td>
+							<th>직급</th>
+							<td>책임연구원</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 서브타이틀 -->
+				<div class="subtitle_wrap mt40"> 
+					<span class="subtitle fl_l">신청내용</span>
+					<div class="sub_btn_menu_n fl_r">						
+					</div>
+				</div>
+				<!-- 테이블 -->
+				<table class="list_table1 mt6 ">
+					<colgroup>
+						<col style="width:30%">
+						<col style="width:10%">
+						<col style="width:20%">
+						<col style="width:30%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>서비스명<span class="fc44">*</span></th>
+							<th>단위</th>
+							<th>신청수량<span class="fc44">*</span></th>
+							<th>비고</th>
+						</tr>
+						<tr>
+							<td class="left_td">행사연설문</td>
+							<td>EA</td>
+							<td><input type="text" value="" class="input_text we100"></td>	
+							<td><input type="text" value="" class="input_text we100"></td>	
+						</tr>
+						<tr>
+							<td class="left_td">독본제작</td>
+							<td>EA</td>
+							<td><input type="text" value="" class="input_text we100"></td>	
+							<td><input type="text" value="" class="input_text we100"></td>	
+						</tr>
+						<tr>
+							<td class="left_td">명패</td>
+							<td>EA</td>
+							<td><input type="text" value="" class="input_text we100"></td>	
+							<td><input type="text" value="" class="input_text we100"></td>	
+						</tr>
+						<tr>
+							<td class="left_td">명함</td>
+							<td>EA</td>
+							<td><input type="text" value="" class="input_text we100"></td>	
+							<td><input type="text" value="" class="input_text we100"></td>	
+						</tr>
+						<tr>
+							<td class="left_td">안내판</td>
+							<td>EA</td>
+							<td><input type="text" value="" class="input_text we100"></td>	
+							<td><input type="text" value="" class="input_text we100"></td>	
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- 저장신청 끝 -->
+			<!-- 서브타이틀 버튼 -->
+			<div class="subtitle_wrap mt60"> 
+				<span class="subtitle fl_l">신청현황</span>
+				<div class="sub_btn_menu_n fl_r">
+					<a href="" class="btn_line btn_color01">조회</a>
+					<!-- <a href="" class="btn_line btn_color01">저장</a> -->
+					<!-- <a href="" class="btn_line btn_color04">삭제</a> -->
+				</div>
+			</div>
+			<!-- 조회박스 -->
+			<table class="sub_sort_table_n sub_table_n">
+				<colgroup>
+					<col style="width:80px;">
+					<col style="width:300px;">
+					<col style="width:80px;">
+					<col style="width:300px;">
+					<col style="width:80px;">
+					<col style="width:300px;">
+				</colgroup>
+				<tbody>
+						<!-- <tr>
+							<th>부서</th>
+							<td>
+								<input id="" type="text" value="" class="input_text we100" readonly="">
+							</td>
+							<th>사번</th>
+							<td>
+								<input id="" type="text" value="" class="input_text we100" readonly="">
+							</td>
+							<th>이름</th>
+							<td>
+								<input id="" type="text" value="" class="input_text we100" readonly="">
+							</td>
+						</tr> -->
+						<tr>
+							<th scope="row">신청일자</th>
+							<td>
+								<div class="date_area">
+									<input id="frYmd" type="text" value="" class="input_text  input_date we46" readonly>
+									<span class="unit">~</span>
+									<input id="toYmd" type="text" value="" class="input_text  input_date we46" readonly>
+								</div>
+							</td>
+							<th>진행상태</th>
+							<td>
+								<select id="" class="input_text select we100">
+									<option value="" selected="">전체</option>
+									<option value="" >결재중</option>
+									<option value="" >승인</option>
+									<option value="" >반려</option>
+									<option value="" >저장</option>
+								</select>
+							</td>
+						</tr>					
+					</tbody>
+				</table>
+				<!-- 버튼 -->
+				<div class="sub_btn_menu_n2">
+				<span class="text">총 40건</span><!-- 
+				<a href="" class="btn_line btn_gray ">전체선택</a>
+				<a href="" class="btn_line btn_gray">선택해제</a>
+				<div class="fl_r">
+					<a href="" class="btn_line btn_color01">승인</a>
+					<a href="" class="btn_line btn_color04">반려</a>
+				</div> -->
+			</div>
+			<!-- 리스트 -->
+			<div class="sub_panel_side_n">
+				<ul id="htmlTable" class="sub_list_table">
+					<li id="trNum_1">
+						<div class="idx_box_n2">
+							<p id="rnum_1">100</p>
+						</div>
+						<a href="javascript:;" class="title_box_n">
+							<span class="type return fl_l">반려</span>
+							<span class="title fl_l">서비스명 : 행사연설문 외 4건  </span>
+						</a>
+						<div class="info_box_n">
+							<p><span class="title ">신청수량 : 4건</span></p>
+							<div class="fl_r">
+								<p>2019-05-05</p>
+							</div>
+						</div>
+					</li>
+					<li id="trNum_1">
+						<div class="idx_box_n2">
+							<p id="rnum_1">100</p>
+						</div>
+						<a href="javascript:;" class="title_box_n">
+							<span class="type save fl_l">저장</span>
+							<span class="title fl_l">서비스명 : 행사연설문 외 4건  </span>
+						</a>
+						<div class="info_box_n">
+							<p><span class="title ">신청수량 : 4건</span></p>
+							<div class="fl_r">
+								<p>2019-05-05</p>
+							</div>
+						</div>
+					</li>				
+					<li id="trNum_1">
+						<div class="idx_box_n2">
+							<p id="rnum_1">2</p>
+						</div>
+						<a href="javascript:;" class="title_box_n">
+							<span class="type wait fl_l">결재중</span>
+							<span class="title fl_l">서비스명 : 행사연설문 외 4건  </span>
+						</a>
+						<div class="info_box_n">
+							<p><span class="title ">신청수량 : 4건</span></p>
+							<div class="fl_r">
+								<p>2019-05-05</p>
+							</div>
+						</div>
+					</li>
+					<li id="trNum_1">
+						<div class="idx_box_n2">
+							<p id="rnum_1">2</p>
+						</div>
+						<a href="javascript:;" class="title_box_n">
+							<span class="type approval fl_l">승인</span>
+							<span class="title fl_l">서비스명 : 행사연설문 외 4건  </span>
+						</a>
+						<div class="info_box_n">
+							<p><span class="title ">신청수량 : 4건</span></p>
+							<div class="fl_r">
+								<p>2019-05-05</p>
+							</div>
+						</div>
+					</li>
+					<li id="trNum_1">
+						<div class="idx_box_n2">
+							<p id="rnum_1">2</p>
+						</div>
+						<a href="javascript:;" class="title_box_n">
+							<span class="type cancel fl_l">신청취소</span>
+							<span class="title fl_l">서비스명 : 행사연설문 외 4건  </span>
+						</a>
+						<div class="info_box_n">
+							<p><span class="title ">신청수량 : 4건</span></p>
+							<div class="fl_r">
+								<p>2019-05-05</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- 페이징  및  목록수-->
+				<div class="list_page">
+					<a href="#" class="first"><span class="icon"></span></a>
+					<a href="#" class="prev"><span class="icon"></span></a>
+					<a href="#" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">7</a>
+					<a href="#">8</a>
+					<a href="#">9</a>
+					<a href="#">10</a>
+					<a href="#" class="next"><span class="icon"></span></a>
+					<a href="#" class="last"><span class="icon"></span></a>
+					<div class="select_wrap ml30">
+						<select class="input_text select">
+							<option value="" selected="">10</option>
+							<option value="" >20</option>
+							<option value="" >50</option>
+							<option value="" >100</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 서브 컨텐츠 끝 -->
+
+
+		<div id="footer">
+			<div class="contains">
+				<p class="copyright">COPYRIGHT ⓒ 2023 POSCO FLOW. All Rights Reserved.  | <span class="help">도움말</span> </p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html><head><script type="text/javascript">
+	var sessCorpCd = "demo";
+	var sessLocale = "ko";
+	var sessEmpNo = "10000001";
+	var sessMstu = "M";
+	var sessAuth = "1 ";
+	var sessName = "홍길동";
+	var sessStepName = "대표이사";
+	var sessDeptCode = "60000001";
+	var sessDeptName = "부서";
+	var sessTelNo = "010-1111-2222";
+	var sessPlacWork = "1";
+	//popup1
+	function fn_popUp(number){
+		$("#popup_mask" + number).show();
+		$("#popup" + number).show();
+	}	
+
+	//레이어 닫기 버튼 (각자 init에 들어감)
+	function fn_close(number){
+		$("#popup_mask" + number).hide();
+		$("#popup" + number).hide();
+	}
+</script>
+
+<title>기념품</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/main/main.js"></script>
+<script type="text/javascript" src="../resources/js/common_dynamic.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../resources/js/respond.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.placeholder.enhanced-1.5.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../resources/js/common.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.poshytip.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.i18n.properties-1.0.9.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.numeric.min.js"></script>
+<script type="text/javascript" src="../resources/js/jsonUtil.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.bpopup.min.js"></script>
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/ie.css">
+<link rel="stylesheet" type="text/css" media="screen" href="../resources/css/jquery-ui-1.8.18.custom.css">
+</head>
+
+<body>
+	<!-- 헤더 -->
+	<div id="viewport" class="sub">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="contains pc">
+				<h1 class="logo">
+					<a href="../main/main.do"><img src="../resources/images/common/header_logo_w.png"></a>
+				</h1>
+				<div class="header_title">총무지원센터</div>
+				<div class="header_menu">
+					<a href="#" class="btn_menu btn_comment"><span class="badge">0</span></a>
+					<a href="javascript:goSystem();" class="btn_menu btn_setup"></a>
+					<a href="#" class="btn_menu btn_mypage"></a>
+					<div class="select_box">
+						<input type="hidden" id="lo" name="lo" value="ko">
+						<a href="#" class="btn_value">업무인프라섹션<b>홍길동</b>과장 </a>
+						<span class="icon"></span>
+						<div class="select_list">
+							<a href="javascript:logOut();">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 컨텐츠 -->
+		<div id="content">
+			<!-- 사이드 메뉴 -->
+			<div id="sidebar">
+				<div class="sidebar_top pc">
+					<a href="javascript:;" title="메뉴 닫기" class="btn_sidebar"></a>
+					<a href="javascript:;" class="btn_menuall"><span>전체 메뉴 보기</span></a>
+				</div>
+				<div class="sidebar_wrap">
+					<div class="sidebar_area mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+						<ul id="gnb" class="pb100">
+							<li class="menu active">
+								<a href="#" class="btns link btn_M05 bookmark">
+									<span class="icon"></span>
+									<span class="text">즐겨찾기</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu bookmark" style="display: block;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns">IT소모품</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">기념품</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">통합신청</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">경조사</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">복지시설</a></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns">자산관리</a></li>
+								</ul>
+							</li>
+							<li class="menu active">
+								<a href="#" class="btns link btn_M01">
+									<span class="icon"></span>
+									<span class="text">지원</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">사무용품</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">IT소모품</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">명함</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">기념품</a><span class="my_icon active"></span></li>
+								</ul>								
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M02">
+									<span class="icon"></span>
+									<span class="text">복지</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: block;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">통합신청</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">근무복 및 안전용품</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">경조사</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">문서수발</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M03">
+									<span class="icon"></span>
+									<span class="text">관리</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">법인카드</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">복지시설</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">사원증</a><span class="my_icon"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">임시출입증</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>
+							<li class="menu">
+								<a href="#" class="btns link btn_M04">
+									<span class="icon"></span>
+									<span class="text">일반</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub_menu" style="display: none;">
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">계약관리</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">자산관리</a><span class="my_icon "></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">차량관리</a><span class="my_icon active"></span></li>
+									<li><a href="javascript:pageLocationHref('#');" class="btns btn_fav">공지사항관리</a><span class="my_icon "></span></li>
+								</ul>	
+							</li>		
+
+						</ul>
+					</div></div></div>
+				</div>
+				<div class="sidebar_bottom pc">
+					<div class="info active">
+						<span class="my_icon">담당자 안내</span>
+					</div>
+					<p>POSCO FLOW   <span class="fs08em">Value, Connected</span></p>
+				</div>				
+			</div>
+		</div>
+		<div id="sidebar_mask"></div>
+		<!-- 서브 컨텐츠 -->
+		<div class="sub_content">
+			<div class="pc">
+				<div class="sub_header welfare">
+					<p class="title">기념품</p>
+				</div>
+				<div id="lnb_menu" class="lnb_menu_box">
+					<div class="sub_lnb_menu menu_scroll">
+						<div class="lnb_menu">
+							<a href="javascript:pageLocationHref('#');" class="btn_menu ">신청</a>
+							<a href="javascript:pageLocationHref('#');" class="btn_menu ">신청 관리</a>
+							<a href="javascript:pageLocationHref('#');" class="btn_menu active">관리</a>
+							<a href="javascript:pageLocationHref('#');" class="btn_menu ">구입실적</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 서브타이틀 버튼 -->
+			<div class="subtitle_wrap mt20"> 
+				<span class="subtitle fl_l">기념품 정보</span>			
+			</div>
+			<!-- 왼쪽전체 -->
+			<div class="we37 fl_l">
+				<!-- 버튼 -->
+				<div class="sub_btn_menu_n2">
+					<div class="fl_r">
+						<a href="" class="btn_line btn_color01">추가</a>
+						<a href="" class="btn_line btn_color01">저장</a>
+						<a href="" class="btn_line btn_color01">삭제</a>
+					</div>
+				</div>
+				<!-- 테이블 -->
+				<table class="list_table1 mt10 ">
+					<colgroup>
+						<col style="width:5%">
+						<col style="width:5%">
+						<col style="width:30%">
+						<col style="width:10%">
+						<col style="width:10%">
+						<col style="width:10%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="ck_type2"><input type="checkbox"  id="ck1" ></th>
+							<th>번호</th>						
+							<th>품목<span class="fc44">*</span></th>
+							<th>정렬순서<span class="fc44">*</span></th>
+							<th>사용여부<span class="fc44">*</span></th>
+							<th></th>							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>1</td>	
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>
+							<td><div class="btn_n_s2 color2">선택</div></td>							
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>2</td>	
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>
+							<td><div class="btn_n_s2 color2">선택</div></td>
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>3</td>	
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>
+							<td><div class="btn_n_s2 color2">선택</div></td>
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>4</td>	
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>
+							<td><div class="btn_n_s2 color2">선택</div></td>
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>5</td>	
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>
+							<td><div class="btn_n_s2 color2">선택</div></td>
+						</tr>				
+					</tbody>
+				</table>				
+			</div>
+			<div class="we3 fl_l next_img"></div>
+			<!-- 오른쪽전체 -->
+			<div class="we58 fl_r">
+				<!-- 버튼 -->
+				<div class="sub_btn_menu_n2">
+					<div class="fl_r">
+						<a href="" class="btn_line btn_color01">추가</a>
+						<a href="" class="btn_line btn_color01">저장</a>
+						<a href="" class="btn_line btn_color01">삭제</a>
+					</div>
+				</div>
+				<!-- 테이블 -->
+				<table class="list_table1 mt10 we100">
+					<colgroup>
+						<col style="width:5%">
+						<col style="width:5%">
+						<col style="width:30%">
+						<col style="width:5%">
+						<col style="width:10%">
+						<col style="width:8%">
+						<col style="width:10%">
+						<col style="width:8%">
+						<col style="width:8%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="ck_type2"><input type="checkbox"  id="ck1" ></th>
+							<th>번호</th>	
+							<th>상세품목<span class="fc44">*</span></th>			
+							<th>이미지</th>
+							<th>단가(원)<span class="fc44">*</span></th>				
+							<th>보유수량</th>
+							<th>정렬순서<span class="fc44">*</span></th>
+							<th>사용여부<span class="fc44">*</span></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>1</td>
+							<td><input type="text" value="상세품목" class="input_text we100"></td>
+							<td><div class="consumable_img"><img src="../resources/images/common/no_image.jpg"></div></td>
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td>1</td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>	
+							<td><div class="btn_n_s2 color2" onclick="fn_popUp('1');">수량변경</div></td>				
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>1</td>
+							<td><input type="text" value="상세품목" class="input_text we100"></td>
+							<td><div class="consumable_img"><img src="../resources/images/common/no_image.jpg"></div></td>
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td>1</td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>	
+							<td><div class="btn_n_s2 color2" onclick="fn_popUp('1');">수량변경</div></td>				
+						</tr>
+						<tr>
+							<td class="ck_type2"><input type="checkbox"  id="ck1" ></td>
+							<td>1</td>
+							<td><input type="text" value="상세품목" class="input_text we100"></td>
+							<td><div class="consumable_img"><img src="../resources/images/common/no_image.jpg"></div></td>
+							<td><input type="text" value="" class="input_text we100"></td>
+							<td>1</td>
+							<td><input type="text" value="1" class="input_text we100"></td>
+							<td>
+								<select id="" class="input_text we100 mr10 fl_l">
+									<option value="" selected="">Y</option>
+									<option value="" selected="">N</option>
+								</select>
+							</td>	
+							<td><div class="btn_n_s2 color2" onclick="fn_popUp('1');">수량변경</div></td>				
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- 서브 컨텐츠 끝 -->
+		<!-- 수량변경 팝업 -->
+		<div id="popup_mask1" class="popup_mask">
+			<div class="popup_mask_in"></div>
+			<div id="popup1" class="popup_window320">
+				<div class="modal-content">
+					<div class="popup_title_wrap">
+						<p class="popup_title ellipsis">수량변경</p>
+						<a class="popup_close" id="popup_close" href="javascript:fn_close('1');">
+							<img alt="" src="../resources/images/icon/popup_close.png">
+						</a>
+					</div>               
+					<div class="popup_panel">
+						<table class="sub_sort_table_n sub_table_n">
+							<colgroup>
+								<col style="width:10%">
+								<col style="width:90%">
+							</colgroup>
+							<tr>
+								<th>추가 수량 입력</th>
+								<td>
+									<div class=" fl_l mr5">
+										<input id="" type="text" value="" class="input_text  we100">
+									</div>
+								</td>
+							</tr>
+						</table>
+						<!-- 버튼 -->
+						<div class="popbtns_long">
+							<a href="" class="btn_line2 btn_color01">확인</a>
+							<a href="" class="btn_line2 btn_color01">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 수량변경 팝업 끝 -->
+
+		<div id="footer">
+			<div class="contains">
+				<p class="copyright">COPYRIGHT ⓒ 2023 POSCO FLOW. All Rights Reserved.  | <span class="help">도움말</span> </p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
